@@ -35,6 +35,21 @@ main {
     margin: 3%;
 }
 
+#search-for {
+    background-color: green;
+    padding: 1%;
+    border-radius: 10px;
+    margin-bottom: 3% ;
+}
+
+input {
+    margin: 3%;
+}
+
+button {
+    margin: 3%;
+}
+
 /* CURRENT WEATHER DISPLAY */
 .weather-container {
     margin: 3%;
