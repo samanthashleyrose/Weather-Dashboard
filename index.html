@@ -9,23 +9,37 @@
 
 
 <body>
+    <!-- HEADER -->
     <header>
         <h1>Weather Dashboard</h1>
     </header>
-    <main class="flex-row justify">
-    <div class="flex-column justify" id="search-panel">
-        <h2>Search for a City</h2>
-        <form action="submit">
-            <input type="text">
+    <!-- CONTENT -->
+    <main class="flex-row">
+        <!-- SEARCH PANEL -->
+        <section class="search-container">
+            <div class="flex-column" id="search-panel">
+                <h2>Search for a City</h2>
+                <form action="submit">
+                <input type="text">
+                <br>
+                <button>Search</button>
+                </form>
+            </div>
+        </section>
+        <!-- WEATHER DASHBOARD -->
+        <section class="weather-container">
+            <!-- CURRENT WEATHER DISPLAY -->
+            <div class="flex-column " id="current-weather">
+                <h2>Current Weather</h2>
+                <br>
+                <p>this is where the current weather will display</p>
+            </div>
             <br>
-            <button>Search</button>
-        </form>
-    </div>
-    <div class="flex-column" id="current-weather">
-        <h2>Current Weather</h2>
-        <br>
-        <p>this is where the current weather will display</p>
-    </div>
+            <!-- FORECASE DISPLAY -->
+            <div class="flex-column" id="forecast">
+                <h3>5-Day Forecast:</h3>
+            </div>
+        </section>  
     </main>
 </body>
 </html>
