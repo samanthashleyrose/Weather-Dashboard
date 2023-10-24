@@ -1,5 +1,6 @@
 * {
     margin: 0%;
+    box-sizing: border-box;
 }
 
 /* HEADER */
@@ -29,12 +30,24 @@ main {
     flex-wrap: wrap;
 }
 
-.justify {
-    justify-content: space-between;
+/* SEARCH PANEL */
+.search-container {
+    margin: 3%;
 }
 
 /* CURRENT WEATHER DISPLAY */
+.weather-container {
+    margin: 3%;
+}
+
 #current-weather {
-    width: 70%;
+    width: 100%;
+    text-align: left;
+    margin-right:100%;
+}
+
+#forecast {
+    width: 100%;
     text-align: left;
 }
+
