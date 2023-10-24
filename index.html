@@ -7,10 +7,25 @@
     <title>Document</title>
 </head>
 
-<header>
-    <h1>Weather Dashboard</h1>
-</header>
+
 <body>
-    
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <main class="flex-row justify">
+    <div class="flex-column justify" id="search-panel">
+        <h2>Search for a City</h2>
+        <form action="submit">
+            <input type="text">
+            <br>
+            <button>Search</button>
+        </form>
+    </div>
+    <div class="flex-column" id="current-weather">
+        <h2>Current Weather</h2>
+        <br>
+        <p>this is where the current weather will display</p>
+    </div>
+    </main>
 </body>
 </html>
