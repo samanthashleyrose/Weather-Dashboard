@@ -2,9 +2,39 @@
     margin: 0%;
 }
 
+/* HEADER */
 header {
     background-color: green;
     color: white;
     padding: 2%;
     text-align: center;
+}
+
+/* MAIN */
+main {
+    margin: 5%;
+}
+
+/* FLEX CONTROL */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+
+}
+
+.flex-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.justify {
+    justify-content: space-between;
+}
+
+/* CURRENT WEATHER DISPLAY */
+#current-weather {
+    width: 70%;
+    text-align: left;
 }
