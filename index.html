@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 
-
 <body>
     <!-- HEADER -->
     <header>
@@ -19,10 +18,10 @@
         <section class="search-container">
             <div class="flex-column" id="search-panel">
                 <h2 id="search-for">Search for a City</h2>
-                <form action="submit">
-                <input type="text">
+                <form action="click">
+                <input type="text" id="zipcode">
                 <br>
-                <button>Search</button>
+                <button id="search-btn">Search</button>
                 </form>
             </div>
         </section>
@@ -36,10 +35,13 @@
             </div>
             <br>
             <!-- FORECASE DISPLAY -->
-            <div class="flex-column" id="forecast">
+            <div class="flex-column" id="forecast-container">
                 <h3>5-Day Forecast:</h3>
+                <p id="forecast">placeholdder</p>
             </div>
         </section>  
     </main>
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
