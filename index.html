@@ -23,21 +23,63 @@
                 <br>
                 <button id="search-btn">Search</button>
                 </form>
+                <br>
+                <ul class="city-list">
+                    <h5>list of popular cities</h5>
+                </ul>
             </div>
         </section>
         <!-- WEATHER DASHBOARD -->
         <section class="weather-container">
             <!-- CURRENT WEATHER DISPLAY -->
-            <div class="flex-column " id="current-weather">
+            <div class="current-weather-container" id="current-weather">
                 <h2>Current Weather</h2>
                 <br>
-                <p>this is where the current weather will display</p>
+                <div class="current-weather-card-container">
+                    <div class="current-weather-card" id="weather-today">
+                        <h3 id="date">DATE</h3>
+                        <h4 id="temp">Temp:</h5>
+                        <h4 id="wind">Wind:</h5>
+                        <h4 id="humidity">Humidity: </h5>
+                    </div>
+                </div>
             </div>
             <br>
-            <!-- FORECASE DISPLAY -->
-            <div class="flex-column" id="forecast-container">
+            <!-- FORECAST DISPLAY -->
+            <div class="forecast-container">
                 <h3>5-Day Forecast:</h3>
-                <p id="forecast">placeholdder</p>
+                <div class="forecast-card-container">
+                    <div class="forecast-card" id="day1">
+                        <h4>DATE</h4>
+                        <h5>Temp:</h5>
+                        <h5>Wind:</h5>
+                        <h5>Humidity: </h5>
+                    </div>
+                    <div class="forecast-card" id="day2">
+                        <h4>DATE</h4>
+                        <h5>Temp:</h5>
+                        <h5>Wind:</h5>
+                        <h5>Humidity: </h5>
+                    </div>
+                    <div class="forecast-card" id="day3">
+                        <h4>DATE</h4>
+                        <h5>Temp:</h5>
+                        <h5>Wind:</h5>
+                        <h5>Humidity: </h5>
+                    </div>
+                    <div class="forecast-card" id="day4">
+                        <h4>DATE</h4>
+                        <h5>Temp:</h5>
+                        <h5>Wind:</h5>
+                        <h5>Humidity: </h5>
+                    </div>
+                    <div class="forecast-card" id="day5">
+                        <h4>DATE</h4>
+                        <h5>Temp:</h5>
+                        <h5>Wind:</h5>
+                        <h5>Humidity: </h5>
+                    </div>
+                </div>
             </div>
         </section>  
     </main>
