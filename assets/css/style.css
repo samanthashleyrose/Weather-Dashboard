@@ -60,12 +60,6 @@ button {
     width: 70%
 }
 
-#current-weather {
-    width: 100%;
-    text-align: left;
-    margin-right:100%;
-}
-
 .current-weather-container {
     width: 100%;
     text-align: left;
@@ -101,19 +95,19 @@ button {
     text-align: left;
 }
 
-.forecast-card {
-    background-color: green;
-    border-radius: 5px;
-    padding: 3%;
-    text-align: left;
-}
-
 .forecast-card-container {
     width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+}
+
+.forecast-card {
+    background-color: green;
+    border-radius: 5px;
+    padding: 3%;
+    text-align: left;
 }
 
 h3 {
@@ -125,12 +119,4 @@ h4 {
 }
 h5 {
     margin-top: 20%;
-}
-
-#day1,
-#day2,
-#day3,
-#day4,
-#day5 {
-    margin: 2%;
 }
