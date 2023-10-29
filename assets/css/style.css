@@ -5,8 +5,9 @@
 
 /* HEADER */
 header {
-    background-color: green;
+    background-color: rgb(17, 58, 89);
     color: white;
+    font-family:'Lora';
     padding: 2%;
     text-align: center;
 }
@@ -14,6 +15,7 @@ header {
 /* MAIN */
 main {
     margin: 3%;
+    font-family:'Lora';
 }
 
 /* FLEX CONTROL */
@@ -35,7 +37,7 @@ main {
 }
 
 #search-for {
-    background-color: green;
+    background-color: rgb(28, 97, 150);
     padding: 1%;
     border-radius: 10px;
     margin-bottom: 3% ;
@@ -73,7 +75,7 @@ button {
 }
 
 .current-weather-card {
-    background-color: green;
+    background-color: rgb(28, 97, 150);
     border-radius: 5px;
     padding: 3%;
     text-align: left;
@@ -99,12 +101,12 @@ button {
     width: 100%;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: space-evenly;
 }
 
 .forecast-card {
-    background-color: green;
+    background-color: rgb(39, 130, 200);
     border-radius: 5px;
     padding: 3%;
     text-align: left;
