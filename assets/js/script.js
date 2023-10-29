@@ -87,3 +87,16 @@ searchBTN.addEventListener('click', function(event) {
 });
 
 
+// Popular Cities Quick Search Buttons
+const newYorkBtn = document.getElementById('NY');
+
+// Event listener for New York 10001 Search Button
+searchBTN.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Search Button Clicked');
+    
+    const zipcode = zipcodeInput.value;
+    getCurrentWeatherAPI(zipcode);
+    get5DayForecastAPI(zipcode);
+});
+
