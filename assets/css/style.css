@@ -37,23 +37,52 @@ main {
 }
 
 #search-for {
-    background-color: rgb(28, 97, 150);
-    padding: 1%;
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    background-color: rgb(30, 101, 155);
+    padding: 3%;
     border-radius: 10px;
     margin-bottom: 3% ;
 }
 
 input {
-    margin: 3%;
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
-button {
+#search-btn {
     margin: 3%;
+    padding: 5%;
+    width: 90%;
+    background-color: rgba(112, 148, 175, 0.773);
+    border-style: none;
+    border-radius: 10px;
+    font-family:'Lora';
+    font-size: 1rem;
 }
 
 .city-list {
     text-align: center;
     padding: 0%;
+}
+
+#list-title {
+    font-size: 1.1rem;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
+
+.list-buttons {
+    margin: 1%;
+    padding: 5%;
+    width: 100%;
+    background-color: rgb(39, 130, 200);
+    border-style: none;
+    border-radius: 10px;
+    font-family:'Lora';
+    font-size: 1rem;
 }
 
 /* CURRENT WEATHER DISPLAY */
@@ -93,12 +122,11 @@ button {
 
 /* FORECAST DISPLAY */
 .forecast-container {
-    width: 100%;
+    max-width: 100%;
     text-align: left;
 }
 
 .forecast-card-container {
-    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
