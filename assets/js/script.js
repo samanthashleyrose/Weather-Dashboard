@@ -8,6 +8,15 @@ const zipcodeInput = document.getElementById
 const searchBTN = document.getElementById('search-btn');
 const forecastDisplay = document.getElementById('forecast');
 
+// Popular Cities Quick Search Buttons
+const NYBtn = document.getElementById('NY');
+const LABtn = document.getElementById('LA');
+const atlantaBtn = document.getElementById('Atlanta');
+const denverBtn = document.getElementById('Denver');
+const seattleBtn = document.getElementById('Seattle');
+const chicagoBtn = document.getElementById('Chicago');
+const austinBtn = document.getElementById('Austin');
+const orlandoBtn = document.getElementById('Orlando');
 
 // Function to get the API data for Today's Current weather
 function getCurrentWeatherAPI(zipcode) {
@@ -86,17 +95,82 @@ searchBTN.addEventListener('click', function(event) {
     get5DayForecastAPI(zipcode);
 });
 
-
-// Popular Cities Quick Search Buttons
-const newYorkBtn = document.getElementById('NY');
-
 // Event listener for New York 10001 Search Button
-searchBTN.addEventListener('click', function(event) {
+NYBtn.addEventListener('click', function(event) {
     event.preventDefault(); 
-    console.log('Search Button Clicked');
+    console.log('NY Quick Search Button Clicked');
     
-    const zipcode = zipcodeInput.value;
-    getCurrentWeatherAPI(zipcode);
-    get5DayForecastAPI(zipcode);
+    const NYZipcode = '10001';
+    getCurrentWeatherAPI(NYZipcode);
+    get5DayForecastAPI(NYZipcode);
 });
 
+// Event listener for Los Angeles 90012 Search Button
+LABtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('LA Quick Search Button Clicked');
+    
+    const LAZipcode = '90012';
+    getCurrentWeatherAPI(LAZipcode);
+    get5DayForecastAPI(LAZipcode);
+});
+
+// Event listener for Atlanta 30303 Search Button
+atlantaBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Atlanta Quick Search Button Clicked');
+    
+    const atlantaZipcode = '30303';
+    getCurrentWeatherAPI(atlantaZipcode);
+    get5DayForecastAPI(atlantaZipcode);
+});
+
+// Event listener for Los Denver 80202 Search Button
+denverBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Denver Quick Search Button Clicked');
+    
+    const denverZipcode = '80202';
+    getCurrentWeatherAPI(denverZipcode);
+    get5DayForecastAPI(denverZipcode);
+});
+
+// Event listener for Seattle 98101 Search Button
+seattleBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Seattle Quick Search Button Clicked');
+    
+    const seattleZipcode = '98101';
+    getCurrentWeatherAPI(seattleZipcode);
+    get5DayForecastAPI(seattleZipcode);
+});
+
+// Event listener for Chicago 60601 Search Button
+chicagoBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Chicago Quick Search Button Clicked');
+    
+    const chicagoZipcode = '60601';
+    getCurrentWeatherAPI(chicagoZipcode);
+    get5DayForecastAPI(chicagoZipcode);
+});
+
+// Event listener for Austin 78701 Search Button
+austinBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Austin Quick Search Button Clicked');
+    
+    const austinZipcode = '78701';
+    getCurrentWeatherAPI(austinZipcode);
+    get5DayForecastAPI(austinZipcode);
+});
+
+// Event listener for Orlando 32801 Search Button
+orlandoBtn.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Orlando Quick Search Button Clicked');
+    
+    const orlandoZipcode = '32801';
+    getCurrentWeatherAPI(orlandoZipcode);
+    get5DayForecastAPI(orlandoZipcode);
+});
