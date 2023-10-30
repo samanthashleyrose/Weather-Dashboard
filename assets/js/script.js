@@ -72,14 +72,16 @@ function display5DayForecast(data) {
         const currentForecast = forecastData[i]; // Gets data for the current day in the loop
         const currentDate = new Date(); // Creates new date object
         currentDate.setDate(currentDate.getDate() + i); // Adds 'i' days to the current date
-        const temperature = currentForecast.main.temp;
+        const temperatureHigh = currentForecast.main.temp_max;
+        const temperatureLow = currentForecast.main.temp_min;
         const windSpeed = currentForecast.wind.speed;
         const humidity = currentForecast.main.humidity;
     
         // Update each forecast card
         const dayElement = document.getElementById('forecast-day' + (i + 1)); // Matches 'i' to HTML to populate each day 
         dayElement.querySelector('.forecast-date').textContent = currentDate.toDateString();
-        dayElement.querySelector('.forecast-temp').textContent = 'Temp: ' + temperature + '°F';
+        dayElement.querySelector('.forecast-temp-high').textContent = 'High: ' + temperatureHigh + '°F';
+        dayElement.querySelector('.forecast-temp-low').textContent = 'Low: ' + temperatureLow + '°F';
         dayElement.querySelector('.forecast-wind').textContent = 'Wind: ' + windSpeed + ' m/s';
         dayElement.querySelector('.forecast-humidity').textContent = 'Humidity: ' + humidity + '%';
     }
