@@ -67,11 +67,14 @@ function get5DayForecastAPI(zipcode) {
 function display5DayForecast(data) {
     // Data from the API
     const forecastData = data.list;
+
+    const currentDate = new Date(); // Creates new date object representing today's date
+    currentDate.setDate(currentDate.getDate() + 1); // Increments the currentDate by 1 day to get tomorrow's date
+
     // Loops through the forecastData array to display each day's forecast in HTML divs
     for (let i = 0; i < 5; i++) {
         const currentForecast = forecastData[i]; // Gets data for the current day in the loop
-        const currentDate = new Date(); // Creates new date object
-        currentDate.setDate(currentDate.getDate() + i); // Adds 'i' days to the current date
+
         const temperatureHigh = currentForecast.main.temp_max;
         const temperatureLow = currentForecast.main.temp_min;
         const windSpeed = currentForecast.wind.speed;
@@ -84,6 +87,9 @@ function display5DayForecast(data) {
         dayElement.querySelector('.forecast-temp-low').textContent = 'Low: ' + temperatureLow + '°F';
         dayElement.querySelector('.forecast-wind').textContent = 'Wind: ' + windSpeed + ' m/s';
         dayElement.querySelector('.forecast-humidity').textContent = 'Humidity: ' + humidity + '%';
+
+        // Increments currentDate by 1 day for the next iteration
+        currentDate.setDate(currentDate.getDate() + 1);
     }
 }
 
