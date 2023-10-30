@@ -58,7 +58,6 @@ function get5DayForecastAPI(zipcode) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
             display5DayForecast(data);
         })
 };
@@ -88,23 +87,20 @@ function display5DayForecast(data) {
         dayElement.querySelector('.forecast-wind').textContent = 'Wind: ' + windSpeed + ' m/s';
         dayElement.querySelector('.forecast-humidity').textContent = 'Humidity: ' + humidity + '%';
 
-        console.log(dayElement);
-
         // Increments currentDate by 1 day for the next iteration
         currentDate.setDate(currentDate.getDate() + 1);
-    }
+    };
 }
 
 // Function to save data to local storage
 function saveDataToLocalStorage(key, data) {
     localStorage.setItem(key, JSON.stringify(data));
-    console.log('Saved to Local Storage')
+    console.log('Saved to Local Storage');
 }
 
 // Function to retrieve data from local storage
 function getDataFromLocalStorage(key,) {
     const data = localStorage.getItem(key);
-    return data ? JSON.parse(data): null;
 }
 
 // Event listener for Search Button
@@ -126,7 +122,7 @@ searchBTN.addEventListener('click', function(event) {
         get5DayForecastAPI(zipcode);
     }
 
-    saveDataToLocalStorage(zipcode);
+    saveDataToLocalStorage(zipcode, );
 });
 
 // Event listener for New York 10001 Search Button
