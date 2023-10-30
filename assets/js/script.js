@@ -27,7 +27,7 @@ function getCurrentWeatherAPI(zipcode) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data.city);
+            console.log(data);
             displayCurrentWeather(data);
         })
 };
@@ -40,7 +40,7 @@ function displayCurrentWeather(data) {
     const temperature = data.list[0].main.temp;
     const windSpeed = data.list[0].wind.speed;
     const humidity = data.list[0].main.humidity;
-    
+        
     // Update the current weather display
     document.getElementById('weather-today').textContent = cityName;
     document.getElementById('date').textContent = currentDate.toDateString();
@@ -88,9 +88,23 @@ function display5DayForecast(data) {
         dayElement.querySelector('.forecast-wind').textContent = 'Wind: ' + windSpeed + ' m/s';
         dayElement.querySelector('.forecast-humidity').textContent = 'Humidity: ' + humidity + '%';
 
+        console.log(dayElement);
+
         // Increments currentDate by 1 day for the next iteration
         currentDate.setDate(currentDate.getDate() + 1);
     }
+}
+
+// Function to save data to local storage
+function saveDataToLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+    console.log('Saved to Local Storage')
+}
+
+// Function to retrieve data from local storage
+function getDataFromLocalStorage(key,) {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data): null;
 }
 
 // Event listener for Search Button
@@ -99,8 +113,20 @@ searchBTN.addEventListener('click', function(event) {
     console.log('Search Button Clicked');
     
     const zipcode = zipcodeInput.value;
-    getCurrentWeatherAPI(zipcode);
-    get5DayForecastAPI(zipcode);
+
+    // Check if data is available in local storage
+    const storedWeatherData = getDataFromLocalStorage(zipcode);
+    if (storedWeatherData) {
+        // Data is available in local storage, display it without making API request
+        displayCurrentWeather(storedWeatherData.currentWeather);
+        display5DayForecast(storedWeatherData.forecastData);
+    } else {
+        // Data is not available in local storage, fetch it from the API
+        getCurrentWeatherAPI(zipcode);
+        get5DayForecastAPI(zipcode);
+    }
+
+    saveDataToLocalStorage(zipcode);
 });
 
 // Event listener for New York 10001 Search Button
