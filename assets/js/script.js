@@ -52,7 +52,6 @@ searchBTN.addEventListener('click', function(event) {
     }
 });
 
-
 // Function to get the API data for Today's Current weather
 function getCurrentWeatherAPI(zipcode) {
     const apiCurrentWeatherURL = apiBaseURL+'?zip='+zipcode+'&appid='+apiKey+'&units=imperial';
