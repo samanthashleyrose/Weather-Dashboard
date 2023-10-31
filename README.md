@@ -1,16 +1,9 @@
 # Weather Dashboard
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
-
 To build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
 
-## Table of Contents (Optional)
+## Table of Contents
 
 If your README is long, add a table of contents to make it easy for users to find what they need.
 
@@ -25,21 +18,23 @@ No installation necessary!
 
 ## Usage
 
-Provide instructions and examples for use. Include screenshots as needed.
-
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-    ```md
-    ![alt text](assets/images/screenshot.png)
-    ```
+Start by entering a zip code into the input box located in the search panel. Today's current weather will populate as well as a 5-day Forecast. Use the Quick Search Buttons located under the search panel to get the weather information for popular cities.
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+#### Knowledge Assitance From:
+<li>Lee Warrick <link><a href="https://leewarrick.com/">Personal Portfolio</a></link></li>
+<li>Mia Ciasullo <link><a href="https://github.com/miacias">GitHub Portfolio</a></link></li>
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+#### Technologies Used:
+<li><link><a href="https://chat.openai.com/">ChatGPT</a></link></li>
+<li><link><a href="https://fonts.google.com/specimen/Merriweather?preview.text=Work%20Day%20Scheduler">Google Fonts</a></link></li>
 
-If you followed tutorials, include links to those here as well.
+#### Documentation Used:
+
+<li><link><a href="https://www.zipdatamaps.com/index.php">ZipDataMaps</a></link></li>
+<li><link><a href="https://www.w3schools.com/js/js_loop_for.asp">W3schools JavaScript For Loop</a></link></li>
+<li><link><a href="https://www.w3schools.com/js/js_dates.asp">W3schools JavaScript Date Objects</a></link></li>
 
 ## Features
 
