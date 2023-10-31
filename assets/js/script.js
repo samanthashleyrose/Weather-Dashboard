@@ -93,11 +93,16 @@ function displayCurrentWeather(data) {
     document.getElementById('wind').textContent = 'Wind: ' + windSpeed + ' m/s';
     document.getElementById('humidity').textContent = 'Humidity: ' + humidity + '%';
 
-    // Display the weather icon
-    const weatherIconElement = document.createElement('img');
-    weatherIconElement.src = weatherIconUrl;
-    weatherIconElement.alt = 'Weather Icon';
-    document.querySelector('#date').appendChild(weatherIconElement)
+    // Displays the weather icon --- also replaces weather icon when new weather information populates
+    const weatherIconElement = document.querySelector('#current-weather-icon img');
+    if (weatherIconElement) {
+        weatherIconElement.src = weatherIconUrl;
+    } else {
+        const newWeatherIconElement = document.createElement('img');
+        newWeatherIconElement.src = weatherIconUrl;
+        newWeatherIconElement.alt = 'Weather Icon';
+        document.querySelector('#current-weather-icon').appendChild(newWeatherIconElement);
+    }
 };
 
 // Function to get the API data for 5-day Forecast
