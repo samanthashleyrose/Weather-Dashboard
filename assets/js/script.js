@@ -40,7 +40,6 @@ searchBTN.addEventListener('click', function(event) {
     const zipcode = zipcodeInput.value;
     // Check if data is available in local storage
     getDataFromLocalStorage();
-
     
     if (weatherData[zipcode]) {
         // Data is available in local storage, display it without making API request
@@ -84,7 +83,7 @@ function displayCurrentWeather(data) {
     const temperature = data.list[0].main.temp;
     const windSpeed = data.list[0].wind.speed;
     const humidity = data.list[0].main.humidity;
-    const weatherIconCode = data.weather[0].icon;
+    const weatherIconCode = data.list[0].weather[0].icon;
     const weatherIconUrl = getWeatherIconUrl(weatherIconCode);
         
     // Update the current weather display
@@ -239,7 +238,9 @@ function getDataFromLocalStorage() {
     let storedData = JSON.parse(localStorage.getItem('weatherData'));
 
     if (storedData) {
-        weatherData= storedData;
+        weatherData === storedData;
     }
+
+    console.log(storedData, "storedData");
 }
 getDataFromLocalStorage();

@@ -134,6 +134,7 @@ input {
 }
 
 .forecast-card {
+    margin: 1%;
     background-color: rgb(39, 130, 200);
     border-radius: 5px;
     padding: 3%;

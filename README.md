@@ -1,11 +1,9 @@
 # Weather Dashboard
 ## Description
 
-To build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+Weather Dashboard uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. When the user enters a zipcode or selects from Popular City, 
 
 ## Table of Contents
-
-If your README is long, add a table of contents to make it easy for users to find what they need.
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -33,12 +31,9 @@ Start by entering a zip code into the input box located in the search panel. Tod
 #### Documentation Used:
 
 <li><link><a href="https://www.zipdatamaps.com/index.php">ZipDataMaps</a></link></li>
+<li><link><a href="https://openweathermap.org/api">OpenWeather API</a></link></li>
 <li><link><a href="https://www.w3schools.com/js/js_loop_for.asp">W3schools JavaScript For Loop</a></link></li>
 <li><link><a href="https://www.w3schools.com/js/js_dates.asp">W3schools JavaScript Date Objects</a></link></li>
-
-## Features
-
-If your project has a lot of features, list them here.
 
 ## License
 
