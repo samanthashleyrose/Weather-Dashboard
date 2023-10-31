@@ -18,6 +18,42 @@ const chicagoBtn = document.getElementById('Chicago');
 const austinBtn = document.getElementById('Austin');
 const orlandoBtn = document.getElementById('Orlando');
 
+let weatherData = {};
+
+// Function to save data to local storage
+function saveDataToLocalStorage() {
+    localStorage.setItem('weatherData', JSON.stringify(weatherData));
+    console.log('Saved to Local Storage');
+}
+
+// Function to update the weather data with a new zip code
+function updateWeatherData(zipcode, data) {
+    weatherData[zipcode] = data;
+    saveDataToLocalStorage();
+}
+
+// Event listener for Search Button
+searchBTN.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Search Button Clicked');
+    
+    const zipcode = zipcodeInput.value;
+    // Check if data is available in local storage
+    getDataFromLocalStorage();
+
+    
+    if (weatherData[zipcode]) {
+        // Data is available in local storage, display it without making API request
+        displayCurrentWeather(weatherData[zipcode]);
+        display5DayForecast(weatherData[zipcode].forecastData);
+    } else {
+        // Data is not available in local storage, fetch it from the API
+        getCurrentWeatherAPI(zipcode);
+        get5DayForecastAPI(zipcode);
+    }
+});
+
+
 // Function to get the API data for Today's Current weather
 function getCurrentWeatherAPI(zipcode) {
     const apiCurrentWeatherURL = apiBaseURL+'?zip='+zipcode+'&appid='+apiKey+'&units=imperial';
@@ -28,9 +64,17 @@ function getCurrentWeatherAPI(zipcode) {
         })
         .then(function (data) {
             console.log(data);
+            updateWeatherData(zipcode, { currentWeather: data });
             displayCurrentWeather(data);
         })
 };
+
+// Function to get the weather icon URL based on the icon code
+function getWeatherIconUrl(iconCode) {
+    // Construct the URL for the weather icon using OpenWeather's icon set
+    const iconBaseUrl = 'http://openweathermap.org/img/wn/';
+    return `${iconBaseUrl}${iconCode}@2x.png`;
+}
 
 // Function to display Today's Current Weather for entered zipcode
 function displayCurrentWeather(data) {
@@ -40,6 +84,8 @@ function displayCurrentWeather(data) {
     const temperature = data.list[0].main.temp;
     const windSpeed = data.list[0].wind.speed;
     const humidity = data.list[0].main.humidity;
+    const weatherIconCode = data.weather[0].icon;
+    const weatherIconUrl = getWeatherIconUrl(weatherIconCode);
         
     // Update the current weather display
     document.getElementById('weather-today').textContent = cityName;
@@ -47,6 +93,12 @@ function displayCurrentWeather(data) {
     document.getElementById('temp').textContent = 'Temp: ' + temperature + '°F';
     document.getElementById('wind').textContent = 'Wind: ' + windSpeed + ' m/s';
     document.getElementById('humidity').textContent = 'Humidity: ' + humidity + '%';
+
+    // Display the weather icon
+    const weatherIconElement = document.createElement('img');
+    weatherIconElement.src = weatherIconUrl;
+    weatherIconElement.alt = 'Weather Icon';
+    document.querySelector('#date').appendChild(weatherIconElement)
 };
 
 // Function to get the API data for 5-day Forecast
@@ -78,6 +130,10 @@ function display5DayForecast(data) {
         const temperatureLow = currentForecast.main.temp_min;
         const windSpeed = currentForecast.wind.speed;
         const humidity = currentForecast.main.humidity;
+        const weatherIconCode = currentForecast.weather[0].icon;
+
+        // Get the weather icon URL based on the icon code
+        const weatherIconUrl = getWeatherIconUrl(weatherIconCode);
     
         // Update each forecast card
         const dayElement = document.getElementById('forecast-day' + (i + 1)); // Matches 'i' to HTML to populate each day 
@@ -87,43 +143,16 @@ function display5DayForecast(data) {
         dayElement.querySelector('.forecast-wind').textContent = 'Wind: ' + windSpeed + ' m/s';
         dayElement.querySelector('.forecast-humidity').textContent = 'Humidity: ' + humidity + '%';
 
+        // Display the weather icon
+        const weatherIconElement = document.createElement('img');
+        weatherIconElement.src = weatherIconUrl;
+        weatherIconElement.alt = 'Weather Icon';
+        dayElement.querySelector('.forecast-date').appendChild(weatherIconElement)
+
         // Increments currentDate by 1 day for the next iteration
         currentDate.setDate(currentDate.getDate() + 1);
     };
 }
-
-// Function to save data to local storage
-function saveDataToLocalStorage(key, data) {
-    localStorage.setItem(key, JSON.stringify(data));
-    console.log('Saved to Local Storage');
-}
-
-// Function to retrieve data from local storage
-function getDataFromLocalStorage(key,) {
-    const data = localStorage.getItem(key);
-}
-
-// Event listener for Search Button
-searchBTN.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    console.log('Search Button Clicked');
-    
-    const zipcode = zipcodeInput.value;
-
-    // Check if data is available in local storage
-    const storedWeatherData = getDataFromLocalStorage(zipcode);
-    if (storedWeatherData) {
-        // Data is available in local storage, display it without making API request
-        displayCurrentWeather(storedWeatherData.currentWeather);
-        display5DayForecast(storedWeatherData.forecastData);
-    } else {
-        // Data is not available in local storage, fetch it from the API
-        getCurrentWeatherAPI(zipcode);
-        get5DayForecastAPI(zipcode);
-    }
-
-    saveDataToLocalStorage(zipcode, );
-});
 
 // Event listener for New York 10001 Search Button
 NYBtn.addEventListener('click', function(event) {
@@ -204,3 +233,13 @@ orlandoBtn.addEventListener('click', function(event) {
     getCurrentWeatherAPI(orlandoZipcode);
     get5DayForecastAPI(orlandoZipcode);
 });
+
+// Function to retrieve data from local storage
+function getDataFromLocalStorage() {
+    let storedData = JSON.parse(localStorage.getItem('weatherData'));
+
+    if (storedData) {
+        weatherData= storedData;
+    }
+}
+getDataFromLocalStorage();
