@@ -32,6 +32,7 @@ Start by entering a zip code into the input box located in the search panel. Tod
 #### Knowledge Assitance From:
 <li>Lee Warrick <link><a href="https://leewarrick.com/">Personal Portfolio</a></link></li>
 <li>Mia Ciasullo <link><a href="https://github.com/miacias">GitHub Portfolio</a></link></li>
+<li>AskBCS Learning Assistants</li>
 
 #### Technologies Used:
 <li><link><a href="https://chat.openai.com/">ChatGPT</a></link></li>
