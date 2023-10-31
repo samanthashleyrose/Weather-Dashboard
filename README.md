@@ -1,7 +1,7 @@
 # Weather Dashboard
 ## Description
 
-The Weather Dashboard Site uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and noe the current weather information will populate as well as the 5-day forecast.
+<link><a href="https://chat.openai.com/](https://samanthashleyrose.github.io/Weather-Dashboard/">The Weather Dashboard Site</a></link> uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and noe the current weather information will populate as well as the 5-day forecast.
 
 OpenWeather's API was extremely useful during this project. By gathering the needed data in JavaScript, the site is able to display:
 - The city name
