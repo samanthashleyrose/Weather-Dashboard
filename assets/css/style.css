@@ -154,12 +154,13 @@ li:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
 }
 
 .forecast-card {
     margin: 1%;
-    background-color: rgb(39, 130, 200);
+    background-color:
+     rgb(39, 130, 200);
     border-radius: 5px;
     padding: 3%;
     text-align: left;
@@ -200,3 +201,153 @@ h5 {
     }
 }
 
+/* XS */
+@media (min-width: 475px) {
+    .weather-container { 
+        margin-left: 15%;
+    }
+    .forecast-card-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    .search-container {
+        margin-left: 33%;
+    }
+
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
+
+/* S -- EX. Microsoft Lumia 550 */
+@media (min-width: 640px) {
+    .weather-container { 
+        margin-left: 5%;
+        width: 60%
+    }
+    .forecast-card-container {
+        display: inline;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: center;
+        width: 20%;
+    }
+    .flex-row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .search-container {
+        margin-left: 5%;
+    }
+
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
+
+
+/* M -- EX. iPad */
+@media (min-width: 768px) {
+    .weather-container { 
+        margin-left: 5%;
+        width: 70%
+    }
+    .forecast-card-container {
+        display: inline;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        text-align: center;
+        width: 10%;
+    }
+    .flex-row {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .search-container {
+        margin-left: 5%;
+    }
+
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
+
+/* LG -- EX. iPad Pro */
+@media (min-width: 1024px) {
+    .weather-container {
+        margin: 3%;
+        width: 70%
+    }
+    .forecast-container {
+        max-width: 100%;
+        text-align: left;
+        margin-right: 30%;
+    }
+    .forecast-card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        width: 100%;
+    }
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .search-container {
+        margin: 3%;
+    }
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
+
+/* XL LG -- EX. Nest Hub Max */
+@media (min-width: 1280px) {
+    .weather-container {
+        margin: 3%;
+        width: 70%
+    }
+    .forecast-container {
+        max-width: 100%;
+        text-align: left;
+        margin-right: 0%;
+    }
+    .forecast-card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: stretch;
+        width: 100%;
+    }
+    .flex-row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .search-container {
+        margin: 3%;
+    }
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
