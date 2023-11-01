@@ -102,6 +102,11 @@ input {
 
 li {
     list-style: none;
+    font-weight: 400;
+}
+
+li:hover {
+    font-weight: 1000;
 }
 
 /* CURRENT WEATHER DISPLAY */
@@ -170,3 +175,28 @@ h4 {
 h5 {
     margin-top: 20%;
 }
+
+/* XXS -- iPhone 14 Pro Max */
+@media (min-width: 363px) {
+    .weather-container { 
+        margin-left: 12.5%;
+    }
+    .forecast-card-container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        text-align: center;
+    }
+
+    .search-container {
+        margin-left: 25%;
+    }
+
+    h4 {
+        margin-bottom: 10%;
+    }
+    h5 {
+        margin-top: 8%;
+    }
+}
+
