@@ -1,12 +1,12 @@
 # Weather Dashboard
 ## Description
 
-<link><a href="https://samanthashleyrose.github.io/Weather-Dashboard/">The Weather Dashboard Site</a></link> uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and noe the current weather information will populate as well as the 5-day forecast.
+<link><a href="https://samanthashleyrose.github.io/Weather-Dashboard/">The Weather Dashboard Site</a></link> uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and the current weather information will populate as well as the 5-day forecast.
 
 OpenWeather's API was extremely useful during this project. By gathering the needed data in JavaScript, the site is able to display:
 - The city name
 - The date
-- The temperatue (current/high/low)
+- The temperature (current/high/low)
 - The wind speed
 - The humidity levels
 
@@ -23,7 +23,7 @@ No installation necessary!
 
 ## Usage
 
-Start by entering a zip code into the input box located in the search panel. Today's current weather will populate as well as a 5-day Forecast. Use the Quick Search Buttons located under the search panel to get the weather information for popular cities. 
+Start by entering a zip code into the input box located in the search panel. Today's current weather will populate as well as a 5-day Forecast. Use the Quick Search Buttons located under the search panel to get the weather information for popular cities. 'Searched for data' will be saved in local storage. 
 
 ![Example screenshot of Weather Dashboard](./assets/images/Weather-Dashboard-SC.png)
 
