@@ -71,7 +71,7 @@ input {
 #list-title {
     font-size: 1.1rem;
     margin-bottom: 5%;
-    margin-top: 10%;
+    margin-top: 1%;
 }
 
 .list-buttons {
@@ -83,6 +83,25 @@ input {
     border-radius: 10px;
     font-family:'Lora';
     font-size: 1rem;
+}
+
+.search-history-container {
+    margin-bottom: 3%;
+}
+
+.search-history{
+    background-color: rgba(112, 148, 175, 0.347);
+    border-radius: 10px;
+    margin-left: 5%;
+    padding: 5%;
+    width: 90%;
+    justify-content: center;
+    display: block;
+    font-size: .7rem;
+}
+
+li {
+    list-style: none;
 }
 
 /* CURRENT WEATHER DISPLAY */

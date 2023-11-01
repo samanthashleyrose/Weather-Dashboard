@@ -32,6 +32,41 @@ function updateWeatherData(zipcode, data) {
     saveDataToLocalStorage();
 }
 
+// Function to Display the users Search History
+function displaySearchHistory() {
+    const searchHistoryContainer = document.querySelector('.search-history-container');
+    const searchHistoryList = document.querySelector('.search-history');
+
+    // Create a new list item and link for the search history
+    const searchHistory = document.createElement('li');
+    const searchHistoryLink = document.createElement('a');
+    searchHistoryLink.textContent = zipcodeInput.value;
+
+    searchHistoryLink.setAttribute('data-zipcode', zipcodeInput.value);
+    searchHistory.appendChild(searchHistoryLink);
+    searchHistoryList.appendChild(searchHistory);
+
+    searchHistoryContainer.style.display === 'inline-block';
+
+        // Add a click event listener to each search history link
+    searchHistoryLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        const clickedZipcode = this.getAttribute('data-zipcode');
+
+        // Check if data is available in local storage for the clicked zipcode
+        const storedData = getDataFromLocalStorage();
+        if (storedData[clickedZipcode]) {
+            // Data is available in local storage, display it without making API request
+            displayCurrentWeather(storedData[clickedZipcode]);
+            display5DayForecast(storedData[clickedZipcode].forecastData);
+        } else {
+            // Data is not available in local storage, fetch it from the API for the clicked zipcode
+            getCurrentWeatherAPI(clickedZipcode);
+            get5DayForecastAPI(clickedZipcode);
+        }
+    });
+}
+
 // Event listener for Search Button
 searchBTN.addEventListener('click', function(event) {
     event.preventDefault(); 
@@ -50,6 +85,9 @@ searchBTN.addEventListener('click', function(event) {
         getCurrentWeatherAPI(zipcode);
         get5DayForecastAPI(zipcode);
     }
+
+    displaySearchHistory();
+
 });
 
 // Function to get the API data for Today's Current weather
@@ -246,5 +284,6 @@ function getDataFromLocalStorage() {
     }
 
     console.log(storedData, "storedData");
+    return storedData;
 }
 getDataFromLocalStorage();
