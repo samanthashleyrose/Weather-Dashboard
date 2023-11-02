@@ -71,7 +71,7 @@ input {
 #list-title {
     font-size: 1.1rem;
     margin-bottom: 5%;
-    margin-top: 1%;
+    margin-top: 2%;
 }
 
 .list-buttons {
@@ -103,10 +103,15 @@ input {
 li {
     list-style: none;
     font-weight: 400;
+    margin-bottom: 1%;
 }
 
 li:hover {
     font-weight: 1000;
+}
+
+a {
+
 }
 
 /* CURRENT WEATHER DISPLAY */
