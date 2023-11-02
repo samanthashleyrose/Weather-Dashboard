@@ -51,7 +51,6 @@ function displaySearchHistory() {
     // Event listener for each search history link
     searchHistoryLink.addEventListener('click', function(event) {
         event.preventDefault();
-        console.log('anchor clicked');
         const clickedZipcode = searchHistoryLink.getAttribute('data-zipcode');
 
         // Check if data is available in local storage for the clicked zipcode
@@ -76,7 +75,7 @@ function getCurrentWeatherAPI(zipcode) {
         })
         .then(function (data) {
             console.log(data);
-            updateWeatherData(zipcode, { currentWeather: data });
+            updateWeatherData(zipcode, data);
             displayCurrentWeather(data);
         })
 };
@@ -91,6 +90,7 @@ function getWeatherIconUrl(iconCode) {
 // Function to display Today's Current Weather for entered zipcode
 function displayCurrentWeather(data) {
     // Data from the API
+    console.log(data);
     const cityName = data.city.name;
     const currentDate = new Date(); // Creates new date object
     const temperature = data.list[0].main.temp;
@@ -133,15 +133,16 @@ function get5DayForecastAPI(zipcode) {
 
 // Function to display 5-day Forecast for entered zipcode
 function display5DayForecast(data) {
-    // Data from the API
-    const forecastData = data.list;
+
 
     const currentDate = new Date(); // Creates new date object representing today's date
     currentDate.setDate(currentDate.getDate() + 1); // Increments the currentDate by 1 day to get tomorrow's date
 
     // Loops through the forecastData array to display each day's forecast in HTML divs
     for (let i = 0; i < 5; i++) {
-        const currentForecast = forecastData[i]; // Gets data for the current day in the loop
+            // Data from the API
+        const forecastData = data.list[i];
+        const currentForecast = forecastData; // Gets data for the current day in the loop
 
         const temperatureHigh = currentForecast.main.temp_max;
         const temperatureLow = currentForecast.main.temp_min;
