@@ -42,53 +42,29 @@ function displaySearchHistory() {
     const searchHistoryLink = document.createElement('a');
     searchHistoryLink.textContent = zipcodeInput.value;
 
-    searchHistoryLink.setAttribute('data-zipcode', zipcodeInput.value);
+    searchHistoryLink.setAttribute('data-zipcode' , zipcodeInput.value);
     searchHistory.appendChild(searchHistoryLink);
     searchHistoryList.appendChild(searchHistory);
 
     searchHistoryContainer.style.display === 'inline-block';
 
-        // Add a click event listener to each search history link
+    // Event listener for each search history link
     searchHistoryLink.addEventListener('click', function(event) {
         event.preventDefault();
-        const clickedZipcode = this.getAttribute('data-zipcode');
+        console.log('anchor clicked');
+        const clickedZipcode = searchHistoryLink.getAttribute('data-zipcode');
 
         // Check if data is available in local storage for the clicked zipcode
         const storedData = getDataFromLocalStorage();
-        if (storedData[clickedZipcode]) {
-            // Data is available in local storage, display it without making API request
+        if (storedData && storedData[clickedZipcode]) {
             displayCurrentWeather(storedData[clickedZipcode]);
             display5DayForecast(storedData[clickedZipcode].forecastData);
         } else {
-            // Data is not available in local storage, fetch it from the API for the clicked zipcode
             getCurrentWeatherAPI(clickedZipcode);
             get5DayForecastAPI(clickedZipcode);
         }
     });
 }
-
-// Event listener for Search Button
-searchBTN.addEventListener('click', function(event) {
-    event.preventDefault(); 
-    console.log('Search Button Clicked');
-    
-    const zipcode = zipcodeInput.value;
-    // Check if data is available in local storage
-    getDataFromLocalStorage();
-    
-    if (weatherData[zipcode]) {
-        // Data is available in local storage, display it without making API request
-        displayCurrentWeather(weatherData[zipcode]);
-        display5DayForecast(weatherData[zipcode].forecastData);
-    } else {
-        // Data is not available in local storage, fetch it from the API
-        getCurrentWeatherAPI(zipcode);
-        get5DayForecastAPI(zipcode);
-    }
-
-    displaySearchHistory();
-
-});
 
 // Function to get the API data for Today's Current weather
 function getCurrentWeatherAPI(zipcode) {
@@ -194,6 +170,27 @@ function display5DayForecast(data) {
         currentDate.setDate(currentDate.getDate() + 1);
     };
 }
+
+// Event listener for Search Button
+searchBTN.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    console.log('Search Button Clicked');
+    
+    const zipcode = zipcodeInput.value;
+    // Check if data is available in local storage
+    getDataFromLocalStorage();
+    
+    if (weatherData[zipcode]) {
+        // Data is available in local storage, display it without making API request
+        displayCurrentWeather(weatherData[zipcode]);
+        display5DayForecast(weatherData[zipcode].forecastData);
+    } else {
+        // Data is not available in local storage, fetch it from the API
+        getCurrentWeatherAPI(zipcode);
+        get5DayForecastAPI(zipcode);
+    }
+    displaySearchHistory();
+});
 
 // Event listener for New York 10001 Search Button
 NYBtn.addEventListener('click', function(event) {
