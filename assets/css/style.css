@@ -154,7 +154,6 @@ li:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    /* justify-content: space-evenly; */
 }
 
 .forecast-card {
@@ -254,7 +253,6 @@ h5 {
         margin-top: 8%;
     }
 }
-
 
 /* M -- EX. iPad */
 @media (min-width: 768px) {
