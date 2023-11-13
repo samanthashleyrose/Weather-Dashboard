@@ -20,10 +20,31 @@ const orlandoBtn = document.getElementById('Orlando');
 
 let weatherData = {};
 
+// Function to retrieve data from local storage
+function getDataFromLocalStorage() {
+    let storedData = JSON.parse(localStorage.getItem('weatherData'));
+
+    if (storedData) {
+        weatherData = storedData;
+    }
+    console.log("From Local Storage: ", storedData);
+    return storedData;
+}
+
 // Function to save data to local storage
 function saveDataToLocalStorage() {
-    localStorage.setItem('weatherData', JSON.stringify(weatherData));
-    console.log('Saved to Local Storage');
+    // Retrieve existing data from local storage
+    let storedData = JSON.parse(localStorage.getItem('weatherData'));
+
+    // Check if the data has already been saved
+    if (storedData) {
+        // If the data has already been saved, do not save it again
+        console.log('Data has already been saved to local storage');
+    } else {
+        // If the data has not been saved, save it to local storage
+        localStorage.setItem('weatherData', JSON.stringify(weatherData));
+        console.log('Saved to Local Storage');
+    }
 }
 
 // Function to update the weather data with a new zip code
@@ -42,7 +63,7 @@ function displaySearchHistory() {
     const searchHistoryLink = document.createElement('a');
     searchHistoryLink.textContent = zipcodeInput.value;
 
-    searchHistoryLink.setAttribute('data-zipcode' , zipcodeInput.value);
+    searchHistoryLink.setAttribute('data-zipcode', zipcodeInput.value);
     searchHistory.appendChild(searchHistoryLink);
     searchHistoryList.appendChild(searchHistory);
 
@@ -134,13 +155,12 @@ function get5DayForecastAPI(zipcode) {
 // Function to display 5-day Forecast for entered zipcode
 function display5DayForecast(data) {
 
-
     const currentDate = new Date(); // Creates new date object representing today's date
     currentDate.setDate(currentDate.getDate() + 1); // Increments the currentDate by 1 day to get tomorrow's date
 
     // Loops through the forecastData array to display each day's forecast in HTML divs
     for (let i = 0; i < 5; i++) {
-            // Data from the API
+        // Data from the API
         const forecastData = data.list[i];
         const currentForecast = forecastData; // Gets data for the current day in the loop
 
@@ -273,15 +293,4 @@ orlandoBtn.addEventListener('click', function(event) {
     get5DayForecastAPI(orlandoZipcode);
 });
 
-// Function to retrieve data from local storage
-function getDataFromLocalStorage() {
-    let storedData = JSON.parse(localStorage.getItem('weatherData'));
-
-    if (storedData) {
-        weatherData === storedData;
-    }
-
-    console.log(storedData, "storedData");
-    return storedData;
-}
 getDataFromLocalStorage();
