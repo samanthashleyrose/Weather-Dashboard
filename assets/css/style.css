@@ -100,8 +100,8 @@ input {
     padding: 5%;
     width: 90%;
     justify-content: center;
-    display: block;
     font-size: .7rem;
+    display: none;
 }
 
 li {

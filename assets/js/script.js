@@ -55,8 +55,8 @@ function updateWeatherData(zipcode, data) {
 
 // Function to Display the users Search History
 function displaySearchHistory() {
-    const searchHistoryContainer = document.querySelector('.search-history-container');
     const searchHistoryList = document.querySelector('.search-history');
+    searchHistoryList.style.display = 'inline-block';
 
     // Create a new list item and link for the search history
     const searchHistory = document.createElement('li');
@@ -66,8 +66,6 @@ function displaySearchHistory() {
     searchHistoryLink.setAttribute('data-zipcode', zipcodeInput.value);
     searchHistory.appendChild(searchHistoryLink);
     searchHistoryList.appendChild(searchHistory);
-
-    searchHistoryContainer.style.display === 'inline-block';
 
     // Event listener for each search history link
     searchHistoryLink.addEventListener('click', function(event) {
