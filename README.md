@@ -1,7 +1,7 @@
 # Weather Dashboard
 ## Description
 
-<link><a href="https://samanthashleyrose.github.io/Weather-Dashboard/">The Weather Dashboard Site</a></link> uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and the current weather information will populate as well as the 5-day forecast.
+<a href="https://samanthashleyrose.github.io/Weather-Dashboard/">The Weather Dashboard Site</a> uses  HTML, CSS, and JS in conjunction with OpenWeather's API Documention. The user can simply enter a zip code or select from the list of Popular Cities and the current weather information will populate as well as the 5-day forecast.
 
 OpenWeather's API was extremely useful during this project. By gathering the needed data in JavaScript, the site is able to display:
 - The city name
@@ -30,20 +30,20 @@ Start by entering a zip code into the input box located in the search panel. Tod
 ## Credits
 
 #### Knowledge Assitance From:
-<li>Lee Warrick <link><a href="https://leewarrick.com/">Personal Portfolio</a></link></li>
-<li>Mia Ciasullo <link><a href="https://github.com/miacias">GitHub Portfolio</a></link></li>
+<li>Lee Warrick <a href="https://leewarrick.com/">Personal Portfolio</a></li>
+<li>Mia Ciasullo <a href="https://github.com/miacias">GitHub Portfolio</a></li>
 <li>AskBCS Learning Assistants</li>
 
 #### Technologies Used:
-<li><link><a href="https://chat.openai.com/">ChatGPT</a></link></li>
-<li><link><a href="https://fonts.google.com/specimen/Merriweather?preview.text=Work%20Day%20Scheduler">Google Fonts</a></link></li>
+<li><a href="https://chat.openai.com/">ChatGPT</a></li>
+<li><a href="https://fonts.google.com/specimen/Merriweather?preview.text=Work%20Day%20Scheduler">Google Fonts</a></li>
 
 #### Documentation Used:
 
-<li><link><a href="https://www.zipdatamaps.com/index.php">ZipDataMaps</a></link></li>
-<li><link><a href="https://openweathermap.org/api">OpenWeather API</a></link></li>
-<li><link><a href="https://www.w3schools.com/js/js_loop_for.asp">W3schools JavaScript For Loop</a></link></li>
-<li><link><a href="https://www.w3schools.com/js/js_dates.asp">W3schools JavaScript Date Objects</a></link></li>
+<li><a href="https://www.zipdatamaps.com/index.php">ZipDataMaps</a></li>
+<li><a href="https://openweathermap.org/api">OpenWeather API</a></li>
+<li><a href="https://www.w3schools.com/js/js_loop_for.asp">W3schools JavaScript For Loop</a></li>
+<li><a href="https://www.w3schools.com/js/js_dates.asp">W3schools JavaScript Date Objects</a></li>
 
 ## License
 
